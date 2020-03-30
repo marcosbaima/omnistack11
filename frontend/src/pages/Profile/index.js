@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.png';
 
 export default function Profile() {
     const [incidents,setIncidents] = useState([]);
@@ -28,7 +28,7 @@ export default function Profile() {
         try{
             await api.delete(`incidents/${id}`, {
                 headers:{
-                    Authorization: ongId,
+                    authorization: ongId,
                  }
             });
             setIncidents(incidents.filter(incident=> incident.id!==id));
