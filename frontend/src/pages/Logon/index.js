@@ -46,7 +46,7 @@ export default function Logon() {
 
                 <Link className="back-link"to="/register">
                     <FiLogIn size={16} color="#fd9119"/>
-                    Não tenho cadastro
+                    Cadastrar Instituição
                 </Link>
             </form>
         </section>

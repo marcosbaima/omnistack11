@@ -67,7 +67,7 @@ export default StyleSheet.create({
         backgroundColor: '#fd9119',
         borderRadius: 8,
         height:50,
-        width:'48%',
+        width:'38%',
         justifyContent:'center',
         alignItems:'center'
     },

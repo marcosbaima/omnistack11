@@ -6,6 +6,7 @@ const OngController=require('./controlers/OngController');
 const IncidentController=require('./controlers/IncidentController');
 const ProfileController=require('./controlers/ProfileController');
 const SessionController = require('./controlers/SessionController');
+const ConfigOngsControle = require('./controlers/ConfigOngsController');
 
 
 const routes=express.Router();
@@ -26,7 +27,8 @@ routes.post('/ongs', celebrate({
         uf: Joi.string().required().length(2),
     })
 }),OngController.create);
-
+routes.get('/configs',ConfigOngsControle.create);
+routes.post('/configs',ConfigOngsControle.create);
 routes.get('/profile',ProfileController.index);
 routes.get('/incidents',celebrate({
     [Segments.QUERY]: Joi.object().keys({

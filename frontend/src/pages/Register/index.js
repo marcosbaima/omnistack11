@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
+
 import api from '../../services/api';
 
 import './styles.css';
@@ -20,6 +21,7 @@ export default function Register(){
     const [uf, setUf] =useState('');
   
     const history=useHistory();
+
     async function handleRegister(e){
         e.preventDefault();
         const data = {
@@ -40,7 +42,7 @@ export default function Register(){
 
             alert(`Seu ID do acesso: ${response.data.id}`);
 
-            history.push('/');
+            history.push('/bank');
 
         } catch{
 
@@ -48,6 +50,7 @@ export default function Register(){
 
         }
     }
+    
     return (
     <div className="register-conteiner">
         <div className="content">
@@ -55,7 +58,7 @@ export default function Register(){
                 <img src={logoImg} alt="Be The Hero"/>
 
                 <h1>Cadastro</h1>
-                <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos de sua ONG.</p>
+                <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem sua Instituição.</p>
 
                 <Link className="back-link" to="/">
                     <FiArrowLeft size={16} color="#fd9119"/>
@@ -70,6 +73,12 @@ export default function Register(){
                 />
 
                 <input 
+                    placeholder="CNPJ / CPF"
+                    value={address_3}
+                    onChange={e => setAddress_3(e.target.value)}
+                />
+
+                <input 
                     type="email" 
                     placeholder="E-mail"
                     value={email}
@@ -77,7 +86,7 @@ export default function Register(){
                 />
 
                 <input 
-                    placeholder="WhatsApp"
+                    placeholder="WhatsApp" 
                     value={whatsapp}
                     onChange={e => setWhatsapp(e.target.value)}
                 />
@@ -92,12 +101,6 @@ export default function Register(){
                     placeholder="Numero"
                     value={address_2}
                     onChange={e => setAddress_2(e.target.value)}
-                />
-
-                <input 
-                    placeholder="Complemento"
-                    value={address_3}
-                    onChange={e => setAddress_3(e.target.value)}
                 />
 
                 <input 
