@@ -7,7 +7,7 @@
 
 Cadastra entidades e tipos de doações.
 
-![](header.png)
+![/omnistack11/frontend/src/assets/logo.png](header.png)
 
 
 
